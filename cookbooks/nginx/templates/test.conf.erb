@@ -1,0 +1,15 @@
+server {
+
+  listen   <%= node['nginx']['listen'] %>;
+
+  root <%= node['nginx']['root'] %>;
+  index index.html index.htm;
+
+  server_name <%= node['nginx']['server_name'] %>;
+  
+  location / {
+   default_type "text/html";
+   try_files $uri.html $uri $uri/ /index.html;
+  }
+
+}
