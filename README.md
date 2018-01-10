@@ -15,11 +15,13 @@ The Chef server acts as a hub for configuration data. The Chef server stores coo
 
 ## Chef Repo
 
+[Overview](https://docs.chef.io/chef_repo.html)
+
 Every Chef installation needs a Chef Repository. This is the place where cookbooks, roles, config files and other artifacts for managing systems with Chef will live. We strongly recommend storing this repository in a version control system such as Git and treat it like source code.
 
 While we prefer Git, and make this repository available via GitHub, you are welcome to download a tar or zip archive and use your favorite version control system to manage the code.
 
-## Repository Directories
+### Repository Directories
 
 This repository contains several directories, and each directory contains a README file that describes what it is for in greater detail, and how to use it for managing your systems with Chef.
 
@@ -53,7 +55,8 @@ Use Test Kitchen to automatically test cookbook data across any combination of p
 - Supports all common testing frameworks that are used by the Ruby community
 - Uses a comprehensive set of base images provided by Bento
 
-## Demo
+---
+# Demo
 
 Install chef [here](https://downloads.chef.io/chefdk):
 
