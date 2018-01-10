@@ -65,6 +65,7 @@ Also install:
 Generate a chef-repo ([docs](https://docs.chef.io/ctl_chef.html#chef-generate-repo)):
 ```bash
 $ chef generate repo demo
+$ cd demo
 ```
 
 Generate a cookbook ([docs](https://docs.chef.io/ctl_chef.html#chef-generate-cookbook)):
