@@ -2,6 +2,11 @@
 
 [Overview](https://docs.chef.io/chef_overview.html)
 
+More Links:
+- [Hosted chef server](https://getchef.opscode.com/signup)
+- [Manage a node with Chef server](https://learn.chef.io/modules/manage-a-node-chef-server#/)
+- [Terraform and chef](https://www.terraform.io/docs/provisioners/chef.html)
+
 The Chef DK workstation is the location where users interact with Chef. On the workstation users author and test cookbooks using tools such as Test Kitchen and interact with the Chef server using the knife and chef command line tools.
 
 Chef client nodes are the machines that are managed by Chef. The Chef client is installed on each node and is used to configure the node to its desired state.
@@ -199,3 +204,10 @@ and run:
 ```
 $ kitchen verify
 ```
+
+## More learning
+
+- Manage a node with chef server
+- Using chef-client and knife 
+- Creating roles and environments, using data_bags
+- Go from terraform -> chef -> container orchestrator
