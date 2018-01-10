@@ -62,12 +62,12 @@ Also install:
 - Virtualbox [download](https://www.virtualbox.org/wiki/Downloads)
 - Vagrant [download](https://www.vagrantup.com/downloads.html)
 
-Generate a chef-repo [docs](https://docs.chef.io/ctl_chef.html#chef-generate-repo):
+Generate a chef-repo ([docs](https://docs.chef.io/ctl_chef.html#chef-generate-repo)):
 ```bash
 $ chef generate repo demo
 ```
 
-Generate a cookbook [docs](https://docs.chef.io/ctl_chef.html#chef-generate-cookbook):
+Generate a cookbook ([docs](https://docs.chef.io/ctl_chef.html#chef-generate-cookbook)):
 ```
 $ chef generate cookbook cookbooks/nginx
 $ cd cookbooks/nginx
@@ -82,15 +82,6 @@ driver:
     - ["forwarded_port", {guest: 80, host: 8080}]
 ```
 
-Using kitchen:
-
-```
-$ kitchen list
-$ kitchen create
-$ kitchen converge
-$ kitchen exec
-$ kitchen destroy
-```
 
 Update `cookbooks/nginx/recipes/default.rb`:
 
@@ -174,4 +165,36 @@ server {
   }
 
 }
+```
+
+Using kitchen:
+
+```bash
+$ kitchen create # create virtual machine(s)
+$ kitchen converge # provision
+$ kitchen exec # execute commands on machine
+$ kitchen login # ssh into machine
+$ kitchen destroy # cleanup
+```
+
+Add some automated testing to `test/smoke/default_test.rb`
+
+```ruby
+describe package('nginx') do
+  it { should be_installed }
+end
+
+describe port(80) do
+  it { should be_listening }
+end
+
+describe file('/var/www/html/index.html') do
+ it { should exist }
+end
+```
+
+and run:
+
+```
+$ kitchen verify
 ```
