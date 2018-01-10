@@ -55,7 +55,7 @@ Install chef [here](https://downloads.chef.io/chefdk):
 This also works:
 
 ```
-$ brew install chef
+$ brew cask install chefdk
 ```
 
 Also install:
